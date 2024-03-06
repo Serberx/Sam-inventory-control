@@ -1,4 +1,5 @@
 package com.samic.samic;
+
 import com.github.dockerjava.api.model.ExposedPort;
 import com.github.dockerjava.api.model.HostConfig;
 import com.github.dockerjava.api.model.PortBinding;
@@ -14,9 +15,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-import org.springframework.orm.jpa.JpaTransactionManager;
-import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.testcontainers.containers.OracleContainer;
 import org.testcontainers.utility.DockerImageName;
@@ -35,7 +33,7 @@ public class TestApplication {
     @ServiceConnection
     OracleContainer oracleContainer(){
         final int exposedPort = 1521;
-        final int localPort = 15432;
+        final int localPort = 1521;
         return new OracleContainer(DockerImageName.parse("gvenzl/oracle-xe:21"))
                        .withExposedPorts(exposedPort)
                        .withCreateContainerCmdModifier(cmd ->{

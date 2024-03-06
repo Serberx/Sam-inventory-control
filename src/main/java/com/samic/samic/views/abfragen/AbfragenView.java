@@ -75,7 +75,7 @@ public class AbfragenView extends VerticalLayout {
     dateTo.setI18n(germanI18n);
     dateFrom.setI18n(germanI18n);
 
-    inOut.setItems("Rein", "Raus");
+    inOut.setItems("Eingehend", "Ausgehend");
     add(UIFactory.rootComponentContainer("",
             UIFactory.childContainer(JustifyContentMode.START,
                 dateFrom,

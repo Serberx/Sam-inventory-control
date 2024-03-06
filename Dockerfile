@@ -1,4 +1,4 @@
 FROM eclipse-temurin:17-jre
-COPY target/*.jar app.jar
+COPY target/my-app-1.0-SNAPSHOT.jar /opt/app.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+ENTRYPOINT ["java", "-jar", "/opt/app.jar"]
